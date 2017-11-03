@@ -35,7 +35,8 @@ Usage: TokenizeSentences [options]
 e.g.
 
 ```bash
-./scripts/run.sh io.elegans.etl.GenerateSentencesFromTransactions --input sentences.utf8.clean.txt  --output TOKENIZED
+./scripts/run.sh io.elegans.etl.GenerateSentencesFromTransactions --users dataset/users.csv --items dataset/items.csv --output dataset_out --transactions dataset/transactions.csv --format format4"
+
 ```
 
 #### generation of a fat jar

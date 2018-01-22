@@ -13,7 +13,7 @@ sbt package
 #### running using sparkSubmit plugin of sbt
 
 ```bash
-sbt "sparkSubmit --class io.elegans.exercises.GenerateSentencesFromTransactions -- --help"
+sbt "sparkSubmit --class io.elegans.etl.GenerateSentencesFromTransactions -- --help"
 
 create sentences from user iteractions list of sentences with spark
 Usage: TokenizeSentences [options]

@@ -142,6 +142,12 @@ object GenerateSentencesFromTransactions {
         item_action_pairs.filter(x => x._1 != x._2)
       }).flatMap(x => x)
       extractedPairs.map(x => x._1 + " " + x._2).saveAsTextFile(params.output + "/" +   params.format) /* write the output in plain text format */
+    } else if (params.format == "format6") {
+      val extractedPairs: RDD[List[String]] = extracted_data.map(user_actions => {
+        user_actions._2
+          .map(x => "itemid_" + x(4))
+      })
+      extractedPairs.map(x => x.mkString(" ")).saveAsTextFile(params.output + "/" +   params.format) /* write the output in plain text format */
     } else {
       spark.stop()
       println("Error: format not supported : " + params.format)
